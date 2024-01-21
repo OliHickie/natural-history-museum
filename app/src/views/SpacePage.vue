@@ -91,6 +91,7 @@ export default {
     },
     computed: {
         highlightData() {
+            // Add data to a single array
             let data = [...this.spaceHighlights];
 
             if (this.spacePartners) {
