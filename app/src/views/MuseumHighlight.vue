@@ -67,10 +67,10 @@ export default {
         },
     },
     methods: {
-        async getNewImage() {
+        getNewImage() {
             // Get a new image for the highlight
             this.fetchingImage = true;
-            await fetch('newImageAPI').then((response) => {
+            fetch('newImageAPI').then((response) => {
                 if (response.ok) {
                     // this.localData.image = response.data.image;
                     // Mimic a delay
