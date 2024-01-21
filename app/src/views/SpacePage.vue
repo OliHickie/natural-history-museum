@@ -7,8 +7,12 @@
         <div class="highlights">
             <div v-for="(highlight, index) in highlightData" :key="index" class="highlights__highlight">
                 <MuseumHighlight :data="highlight">
+                    <a v-if="highlight.quiz" :href="highlight.quiz" target="_blank" class="highlights__highlight--quiz">
+                        Take our quiz
+                        <ChevronRight class="highlights__highlight--quiz_icon" />
+                    </a>
                     <template v-slot:icon>
-                        <StarIcon class="star-icon" />
+                        <StarIcon class="highlight-icon" />
                     </template>
                 </MuseumHighlight>
             </div>
@@ -20,13 +24,15 @@
 
 <script>
 import StarIcon from '@/components/icons/StarIcon.vue';
+import ChevronRight from '@/components/icons/ChevronRight.vue';
 import MuseumHighlight from './MuseumHighlight.vue';
 
 export default {
     name: 'SpacePage',
     components: {
-    MuseumHighlight,
-    StarIcon
+        MuseumHighlight,
+        StarIcon,
+        ChevronRight
     },
     mixins: [
     ],
@@ -132,10 +138,28 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     &__highlight {
         padding: 2rem;
+        &--quiz {
+            color: #000;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 500;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            line-height: 1;
+            &:hover {
+                background-color: #EDEDED;
+            }
+            &_icon {
+                height: 1rem;
+                width: 1rem;
+                margin-left: 0.5rem;
+                vertical-align: middle;            
+            }
+        }
     }
 }
 
-.star-icon {
+.highlight-icon {
     display: block;
     height: 3rem;
     width: 3rem
