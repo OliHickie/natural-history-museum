@@ -70,16 +70,16 @@ export default {
         getNewImage() {
             // Get a new image for the highlight
             this.fetchingImage = true;
-            fetch('newImageAPI').then((response) => {
-                if (response.ok) {
+            // fetch('newImageAPI').then((response) => {
+                // if (response.ok) {
                     // this.localData.image = response.data.image;
                     // Mimic a delay
                     setTimeout(() => {
                         this.localData.image = `https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee-scaled.jpg`;
                         this.fetchingImage = false;
                     }, 1000);
-                }
-            });
+                // }
+            // });
         },
     },
 };
