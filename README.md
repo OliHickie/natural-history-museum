@@ -28,7 +28,7 @@ REQUIREMENTS
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Move into app directory
+Move into app directory
 
 ## Project Setup
 
