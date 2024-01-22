@@ -26,6 +26,7 @@
 import StarIcon from '@/components/icons/StarIcon.vue';
 import ChevronRight from '@/components/icons/ChevronRight.vue';
 import MuseumHighlight from './MuseumHighlight.vue';
+import { format } from 'date-fns';
 
 export default {
     name: 'SpacePage',
@@ -108,7 +109,9 @@ export default {
             }
             // Sort data by date
             data.sort((a, b) => {
-                return new Date(b.date) - new Date(a.date);
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return format(dateA, 'do MMM yyyy HH:mm') - format(dateB, 'do MMM yyyy HH:mm');
             });
             return data;
         }
